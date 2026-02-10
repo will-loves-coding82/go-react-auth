@@ -1,0 +1,17 @@
+services:
+  db:
+    container_name: "blueprint"
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: ${BLUEPRINT_DB_DATABASE}
+      MYSQL_USER: ${BLUEPRINT_DB_USERNAME}
+      MYSQL_PASSWORD: ${BLUEPRINT_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${BLUEPRINT_DB_ROOT_PASSWORD}
+    ports:
+      - "${BLUEPRINT_DB_PORT}:${BLUEPRINT_DB_PORT}"
+    volumes:
+     - mysql_volume_bp:/var/lib/mysql
+     - ./go-server/sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+volumes:
+  mysql_volume_bp:
