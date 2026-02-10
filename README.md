@@ -2,7 +2,7 @@
 
 Lightweight example project demonstrating authentication with a Go backend and a React frontend.
 
-<video src="./assets/demo.mov" controls></video>
+<video src="./assets/demo.mp4" controls></video>
 
 ## Quick overview
 
